@@ -11,7 +11,7 @@ from gpt import process_text_with_openai
 gcp_bucket_name=os.getenv('GCP_BUCKET_NAME')
 gcp_project_id=os.getenv('GCP_PROJECT_ID')
 gcp_processor_id=os.getenv('GCP_PROCESSOR_ID')
-path_to_gcp_secret = './secrets/idyllic-axe-429815-s0-083a8a551cb4.json'
+path_to_gcp_secret = './secrets/sensatecs-demo-5fef06d9130b.json'
 
 # Set GCP Credentials
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = path_to_gcp_secret

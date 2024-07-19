@@ -12,10 +12,9 @@ from config import setup_google_cloud_credentials
 gcp_bucket_name=os.getenv('GCP_BUCKET_NAME')
 gcp_project_id=os.getenv('GCP_PROJECT_ID')
 gcp_processor_id=os.getenv('GCP_PROCESSOR_ID')
-gcp_service_key=os.getenv('GCP_SERVICE_KEY')
 
 # Init GCP Creds
-setup_google_cloud_credentials(gcp_service_key)
+setup_google_cloud_credentials()
 
 st.title("Sensatecs Document Extraction")
 

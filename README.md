@@ -6,7 +6,7 @@ This application provides a web interface for uploading PDF files, extracting te
 
 - **Python 3.10 or higher**
 - **Streamlit**
-- **Google Cloud SDK**: For interacting with Google Cloud Storage and Document AI.
+- **Google Cloud Service Secrets**: For interacting with Google Cloud Storage and Document AI.
 - **OpenAI API Key**: For using GPT.
 
 ## Installation
@@ -34,6 +34,16 @@ pip install -r requirements.txt
 GCP_BUCKET_NAME=<your-gcp-bucket-name>
 GCP_PROJECT_ID=<your-gcp-project-id>
 GCP_PROCESSOR_ID=<your-gcp-processor-id>
+GCP_SERVICE_TYPE=<your-gcp-service-type>
+GCP_PRIVATE_KEY_ID=<your-gcp-private-key-id>
+GCP_PRIVATE_KEY=<your-gcp-private-key>
+GCP_CLIENT_ID=<your-gcp-client-id>
+GCP_AUTH_URI=<your-gcp-auth-uri>
+GCP_TOKEN_URI=<your-gcp-token-uri>
+GCP_AUTH_PROVIDER_X509_CERT_URL=<your-gcp-provider-cert>
+GCP_CLIENT_X509_CERT_URL=<your-gcp-client-cert>
+GCP_UNIVERSE_DOMAIN=<your-gcp-universe-domain>
+GCP_CLIENT_EMAIL=<your-gcp-client-email>
 ```
 
 ## How to Run the Application
@@ -90,7 +100,6 @@ streamlit run main.py
 
 ## Troubleshooting
 
-- **Google Cloud Authentication**: Ensure the Google Cloud credentials file path is correct.
 - **Environment Variables**: Verify that the `.env` file is correctly configured.
 - **Dependencies**: Ensure all required packages are installed.
 - **Errors and Logs**: Check Streamlit logs for any errors or issues.

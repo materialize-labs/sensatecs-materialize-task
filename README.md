@@ -1,6 +1,6 @@
 # Sensatecs Document Extraction
 
-This application provides a web interface for uploading PDF files, extracting text from them using Google Cloud Platform (GCP) Document AI, and analyzing the extracted text using OpenAI's GPT. The results are displayed within the web app built with Streamlit.
+This application provides a web interface for uploading PDF files, extracting text from them using [Google Cloud Platform (GCP) Document AI](https://cloud.google.com/document-ai), and analyzing the extracted text using OpenAI's GPT. The results are displayed within the web app built with Streamlit.
 
 ## Prerequisites
 
@@ -28,7 +28,9 @@ Install the necessary Python packages using pip:
 pip install -r requirements.txt
 ```
 
-### 3. Set Up Environment Variables and secrects
+### 3. Set Up Environment Variables and Secrets
+
+Create a `.env` file in the root directory of your project and add the following environment variables:
 
 ```bash
 GCP_BUCKET_NAME=<your-gcp-bucket-name>
@@ -44,6 +46,7 @@ GCP_AUTH_PROVIDER_X509_CERT_URL=<your-gcp-provider-cert>
 GCP_CLIENT_X509_CERT_URL=<your-gcp-client-cert>
 GCP_UNIVERSE_DOMAIN=<your-gcp-universe-domain>
 GCP_CLIENT_EMAIL=<your-gcp-client-email>
+OPENAI_API_KEY=<your-openai-api-key>
 ```
 
 ## How to Run the Application
@@ -97,6 +100,28 @@ streamlit run main.py
 
 4. **Result Display**:
    - The results are displayed on the Streamlit app using `st.json`.
+
+## Architecture and File Descriptions
+
+### File Structure
+
+- **main.py**: The entry point of the application. It sets up the Streamlit interface and handles file uploads and extraction processes.
+- **config.py**: Contains the setup for Google Cloud credentials.
+- **bucket.py**: Handles file uploads to Google Cloud Storage.
+- **extract.py**: Contains functions for extracting text from PDF files using GCP Document AI.
+- **gpt.py**: Contains functions for processing extracted text using OpenAI's GPT.
+- **helpers.py**: Utility functions for processing and extracting text from Document AI responses.
+- **requirements.txt**: Lists all the Python dependencies required for the project.
+- **.env**: Environment variables for configuring the application (not included in the repository, must be created manually).
+
+### How to Use the Files
+
+- **main.py**: Run this file to start the Streamlit application.
+- **config.py**: Automatically called by `main.py` to set up Google Cloud credentials.
+- **bucket.py**: Used by `main.py` to upload files to Google Cloud Storage.
+- **extract.py**: Called by `main.py` to extract text from uploaded PDF files.
+- **gpt.py**: Called by `main.py` to process extracted text using OpenAI's GPT.
+- **helpers.py**: Provides helper functions used by `extract.py` for text extraction.
 
 ## Troubleshooting
 

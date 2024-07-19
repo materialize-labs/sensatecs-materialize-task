@@ -25,7 +25,7 @@ def extract_data(file_paths: list[str]):
     processor_id = gcp_processor_id
     location = "us"
     mime_type = "application/pdf"
-    field_mask = "text,pages.pageNumber,pages.paragraphs,pages.blocks"
+    field_mask = "text,pages.pageNumber,pages.paragraphs,pages.paragraphs"
 
     return extract_text_batch(
         project_id,

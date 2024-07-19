@@ -46,7 +46,7 @@ def process_text_with_openai(data):
     - Status
     - Need to know
 
-    The output should be a structured JSON response containing all the extracted information in a key-value format. Each data point should include the source page number from the PDF where the information was extracted. If there is more than one source page number that the data point came from, include all pages. Additionally, provide a few sentence summary of the medical record based on the information extracted. Here is an example of the desired output format:
+    The output should be a structured JSON response containing all the extracted information in a key-value format. Each data point should include the source page number from the PDF where the information was extracted. If there is more than one source page number that the data point came from, include all pages. If there is no source page found, then that means the information could not be found and you should respond with "Not Specified". Additionally, provide a few sentence summary of the medical record based on the information extracted. Here is an example of the desired output format:
 
     ```json
     {{

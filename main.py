@@ -7,14 +7,15 @@ load_dotenv()
 from bucket import upload_to_bucket
 from extract import extract_text_batch
 from gpt import process_text_with_openai
+from config import setup_google_cloud_credentials
 
 gcp_bucket_name=os.getenv('GCP_BUCKET_NAME')
 gcp_project_id=os.getenv('GCP_PROJECT_ID')
 gcp_processor_id=os.getenv('GCP_PROCESSOR_ID')
-path_to_gcp_secret = './secrets/sensatecs-demo-5fef06d9130b.json'
+gcp_service_key=os.getenv('GCP_SERVICE_KEY')
 
-# Set GCP Credentials
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = path_to_gcp_secret
+# Init GCP Creds
+setup_google_cloud_credentials(gcp_service_key)
 
 st.title("Sensatecs Document Extraction")
 
@@ -33,7 +34,7 @@ def extract_data(file_paths: list[str]):
         processor_id,
         file_paths,
         mime_type,
-        save_to_json=True,
+        save_to_json=False,
         # field_mask
     )
 

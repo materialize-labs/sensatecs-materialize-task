@@ -139,6 +139,7 @@ def extract_text_batch(
         "paragraphs": all_paragraphs,
     }
 
+# Test function to store files locally if needed
 def extract():
     project_id = gcp_project_id
     processor_id = gcp_processor_id
@@ -156,5 +157,3 @@ def extract():
         save_to_json=True,
         # field_mask
     )
-    
-# extract()

@@ -19,7 +19,7 @@ def process_text_with_openai(data):
       - Treatment Plan
       - Doctor’s Notes
       - Doctor’s Name
-      - Clinical Review (from Detailed Sensatecs Platform section)
+      - Clinical Review 
 
     Additionally, provide a brief summary of the medical record based on the extracted information.
 

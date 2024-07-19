@@ -9,8 +9,8 @@ def setup_google_cloud_credentials():
     global _temp_file_path
     
     gcp_credentials = {
-        "type": os.getenv("GCP_TYPE", "service_account"),
-        "project_id": os.getenv("GCP_PROJECT_ID", ""),
+        "type": os.getenv("GCP_SERVICE_TYPE", "service_account"),
+        "project_id": os.getenv("GCP_SERVICE_PROJECT_ID", ""),
         "private_key_id": os.getenv("GCP_PRIVATE_KEY_ID", ""),
         "private_key": os.getenv("GCP_PRIVATE_KEY", "").replace("\\n", "\n"),
         "client_email": os.getenv("GCP_CLIENT_EMAIL", ""),

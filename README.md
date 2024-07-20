@@ -2,6 +2,10 @@
 
 This application provides a web interface for uploading PDF files, extracting text from them using [Google Cloud Platform (GCP) Document AI](https://cloud.google.com/document-ai), and analyzing the extracted text using OpenAI's GPT. The results are displayed within the web app built with Streamlit.
 
+## Public Demo
+The application has been deployed publicly to Streamlit at the URL:
+[https://sensatecs-demo.streamlit.app/](https://sensatecs-demo.streamlit.app/)
+
 ## Prerequisites
 
 - **Python 3.10 or higher**

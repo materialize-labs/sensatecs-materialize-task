@@ -54,7 +54,7 @@ if uploaded_file is not None:
         with st.spinner('Analyzing document...'):
             result = process_text_with_openai(extracted_data["paragraphs"])
                 
-            st.success('Analyzing process completed.')
+            st.success('Analysis completed.')
                 
             st.write("Result:")
             st.json(result)
